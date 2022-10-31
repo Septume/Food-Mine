@@ -1,4 +1,4 @@
-import { sample_foods, sample_tags } from './../../frontend-course/src/data';
+import { sample_foods, sample_tags } from "./data";
 
 import cors from "cors";
 import express from "express";
@@ -30,7 +30,7 @@ app.get("/api/foods/tags", (req, res) => {
 app.get("/api/foods/tag/:tagName", (req, res) => {
     const tagName = req.params.tagName;
     const foods = sample_foods
-        .filter(food => food.tags?.includes(tagName));
+    .filter(food => food.tags?.includes(tagName));
     res.send(foods);
 })
 

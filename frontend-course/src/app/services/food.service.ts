@@ -1,7 +1,5 @@
-import { FOODS_BY_ID_URL, FOODS_BY_SEARCH_URL, FOODS_BY_TAG_URL } from './../shared/constants/urls';
-import { sample_foods, sample_tags } from './../../data';
+import { FOODS_BY_ID_URL, FOODS_BY_SEARCH_URL, FOODS_BY_TAG_URL, FOODS_TAG_URL, FOODS_URL } from '../shared/constants/urls';
 
-import { FOODS_URL } from '../shared/constants/urls';
 import { Food } from '../shared/models/Food';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -24,12 +22,12 @@ export class FoodService {
   }
 
   getAllTags():Observable<Tag[]> {
-    return this._http.get<Tag[]>(FOODS_BY_TAG_URL);
+    return this._http.get<Tag[]>(FOODS_TAG_URL);
   }
 
 
   getAllFoodsByTag(tag:string): Observable<Food[]> {
-    return tag === "All"?
+    return tag === "All" ?
     this.getAll():
     this._http.get<Food[]>(FOODS_BY_TAG_URL + tag);
   }
