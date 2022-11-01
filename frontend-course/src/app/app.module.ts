@@ -29,7 +29,7 @@ import { TitleComponent } from './components/partials/title/title.component';
     BrowserModule,
     AppRoutingModule,
     RatingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
