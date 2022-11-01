@@ -1,5 +1,4 @@
 import { FOODS_BY_ID_URL, FOODS_BY_SEARCH_URL, FOODS_BY_TAG_URL, FOODS_TAG_URL, FOODS_URL } from './../shared/constants/urls';
-import { sample_foods, sample_tags } from './../../data';
 
 import { Food } from '../shared/models/Food';
 import { HttpClient } from '@angular/common/http';

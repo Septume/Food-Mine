@@ -6,9 +6,11 @@ import { FoodPageComponent } from './components/pages/food-page/food-page.compon
 import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { RatingModule } from 'ng-starrating';
+import { ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './components/partials/search/search.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
 import { TitleComponent } from './components/partials/title/title.component';
@@ -23,13 +25,15 @@ import { TitleComponent } from './components/partials/title/title.component';
     FoodPageComponent,
     CartPageComponent,
     TitleComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RatingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
