@@ -14,16 +14,16 @@ export class FoodPageComponent implements OnInit {
 
   food!: Food;
 
-  constructor(private _activatedRoute: ActivatedRoute,
-              private _foodService: FoodService,
-              private _cartService: CartService,
-              private _router: Router) {
+  constructor(_activatedRoute: ActivatedRoute, _foodService: FoodService,
+    private _cartService: CartService, private _router: Router) {
 
     _activatedRoute.params.subscribe((params) => {
       if(params.id)
-      this.food = _foodService.getFoodById(params.id);
+        _foodService.getFoodById(params.id).subscribe(serverFood => {
+          this.food = serverFood;
+        });
     })
-              }
+  }
 
   ngOnInit(): void {
   }
