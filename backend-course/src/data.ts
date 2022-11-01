@@ -68,6 +68,7 @@ export const sample_foods: any[]=[
   },
 ]
 
+
 export const sample_tags:any[] = [
   { nom: 'All', count: 6 },
   { nom: 'FastFood', count: 4 },
@@ -78,3 +79,21 @@ export const sample_tags:any[] = [
   { nom: 'Fry', count: 1 },
   { nom: 'Soup', count: 1 },
 ]
+
+
+export const sample_users: any[] = [
+  {
+    name: "John Doe",
+    email: "john@gmail.com",
+    password: "12345",
+    address: "Toronto On",
+    isAdmin: true,
+  },
+  {
+    name: "Jane Doe",
+    email: "Jane@gmail.com",
+    password: "12345",
+    address: "Shanghai",
+    isAdmin: false,
+  },
+];
