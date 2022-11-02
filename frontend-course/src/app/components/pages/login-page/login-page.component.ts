@@ -14,6 +14,7 @@ export class LoginPageComponent implements OnInit {
   loginForm!:FormGroup;
   isSubmitted = false;
   returnUrl = '';
+
   constructor(private formBuilder:FormBuilder, private _userService: UserService,
     private _activatedRoute: ActivatedRoute, private _router: Router) { }
 
@@ -27,17 +28,18 @@ export class LoginPageComponent implements OnInit {
   }
 
     get fc(){
-      //verification
+      //Contains => verifie qu'une partie d'une chaine est dans un tableau
+      //Controls => verifie le FormGroup valide ????
       return this.loginForm.controls;
     }
 
     submit(){
       this.isSubmitted = true;
+      //return void => retourner rien
       if(this.loginForm.invalid) return;
 
-      //affiche le login en alert
-      // alert(`email: ${this.fc.email.value},
-      // password: ${this.fc.password.value}`)
+      alert(`email: ${this.fc.email.value},
+      password: ${this.fc.password.value}`)
 
       //
     }
