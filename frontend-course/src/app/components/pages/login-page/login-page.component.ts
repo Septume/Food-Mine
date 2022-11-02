@@ -24,6 +24,8 @@ export class LoginPageComponent implements OnInit {
       password:['', Validators.required]
     });
 
+    //queryParams => fragment en plusieur routes
+    //snapshot => Observable de la route defini
     this.returnUrl = this._activatedRoute.snapshot.queryParams.returnUrl;
   }
 
@@ -38,9 +40,9 @@ export class LoginPageComponent implements OnInit {
       //return void => retourner rien
       if(this.loginForm.invalid) return;
 
-      alert(`email: ${this.fc.email.value},
-      password: ${this.fc.password.value}`)
-
-      //
+      this._userService.login({email:this.fc.email.value,
+        password: this.fc.password.value}).subscribe(() => {
+          this._router.navigateByUrl(this.returnUrl);
+        });
     }
 }
