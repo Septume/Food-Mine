@@ -16,7 +16,7 @@ export class UserService {
 private userSubject = new BehaviorSubject<User>(this.getUserFromLocalStorage());
 public userObservable:Observable<User>;
 
-constructor(private _http:HttpClient,private _toastrService: ToastrService) {
+constructor(private _http:HttpClient, private _toastrService: ToastrService) {
     this.userObservable = this.userSubject.asObservable();
   }
 
@@ -52,7 +52,5 @@ constructor(private _http:HttpClient,private _toastrService: ToastrService) {
     const userJson = localStorage.getItem(USER_KEY);
     if(userJson) return JSON.parse(userJson) as User;
     return new User();
-
-
   }
 }
