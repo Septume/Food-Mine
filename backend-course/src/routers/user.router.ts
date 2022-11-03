@@ -19,17 +19,16 @@ router.get("/seed", asyncHandler(
 }));
 
 
-router.get("/", (req, res) => {
-    res.send(sample_users);
-})
-
 router.post("/login", asyncHandler(
   async (req, res) => {
     const {email, password} = req.body;
-    const user = await UserModel.findOne({email,password});
+    // const user = sample_users.find(user => user.email === email &&
+    //   user.password === password)
+    const user = await UserModel.findOne({email, password});
 
       if(user){
         res.send(generateTokenResponse(user));
+        
       }else{
         const BAD_REQUEST = 400;
         res.status(BAD_REQUEST).send("User name or password is not valid!");

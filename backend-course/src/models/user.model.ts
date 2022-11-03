@@ -18,14 +18,13 @@ export const UserSchema = new Schema<User>(
         isAdmin: {type: Boolean, required:true},
     
     },{
+        timestamps:true,
         toJSON:{
             virtuals:true
         },
         toObject:{
             virtuals:true
-        },
-        timestamps:true
-    }
-);
+        }
+    });
 
 export const UserModel = model<User>('user', UserSchema);
