@@ -4,8 +4,8 @@ import dotenv from 'dotenv';
 import express from "express";
 import foodRouter from './routers/food.router';
 import userRouter from './routers/user.router';
-dbConnect();
 dotenv.config();
+dbConnect();
 
 
 
