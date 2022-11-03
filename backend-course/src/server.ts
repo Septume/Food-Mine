@@ -1,8 +1,13 @@
 import cors from "cors";
+import { dbConnect } from './configs/database.config';
+import dotenv from 'dotenv';
 import express from "express";
 import foodRouter from './routers/food.router';
 import userRouter from './routers/user.router';
-import { visitFunctionBody } from "typescript";
+dbConnect();
+dotenv.config();
+
+
 
 const app = express();
 app.use(express.json());
