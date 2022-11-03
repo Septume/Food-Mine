@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 import { Food } from 'src/app/shared/models/Food';
-import { FoodService } from './../../../services/food.service';
+import { FoodService } from 'src/app/services/food.service';
 import { Observable } from 'rxjs';
-import { Tag } from '../../../shared/models/Tag';
 
 @Component({
   selector: 'app-home',
@@ -33,6 +32,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+console.log(this.foods);
+
   }
 
 }
