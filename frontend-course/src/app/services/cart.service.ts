@@ -52,6 +52,10 @@ export class CartService {
     return this.cartSubject.asObservable();
   }
 
+  getCart(): Cart{
+    return this.cartSubject.value;
+  }
+
   private setCartToLocalStorage(): void{
     this.cart.totalPrice = this.cart.items
     // reduce() => traite mes valeurs de gauche à droite
