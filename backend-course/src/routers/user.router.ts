@@ -22,10 +22,8 @@ router.get("/seed", asyncHandler(
 router.post("/login", asyncHandler(
   async (req, res) => {
     const {email, password} = req.body;
-    // const user = sample_users.find(user => user.email === email &&
-    //   user.password === password)
     const user = await UserModel.findOne({email, password});
-
+    
       if(user){
         res.send(generateTokenResponse(user));
         
@@ -37,14 +35,21 @@ router.post("/login", asyncHandler(
 ));
   
   const generateTokenResponse = (user:any) => {
+    console.log("-------------------------",user);
    const token = jwt.sign({
     email:user.email, isAdmin:user.isAdmin
    }, "SomeRandomText", {
     expiresIn:"30d"
    });
   
-   user.token = token;
-   return user;
+   return {
+    id: user.id,
+    email: user.email,
+    name: user.name,
+    address: user.name,
+    asAdmin:user.isAdmin,
+    token: token
+   };
   }
 
   export default router;
