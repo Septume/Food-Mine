@@ -21,6 +21,11 @@ constructor(private _http:HttpClient, private _toastrService: ToastrService) {
     this.userObservable = this.userSubject.asObservable();
   }
 
+  //checkout
+  public get currentUser():User{
+    return this.userSubject.value;
+  }
+
   login(userLogin:IUserLogin):Observable<User>{
     return this._http.post<User>(USER_LOGIN_URL, userLogin).pipe(
       tap({
