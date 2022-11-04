@@ -3,8 +3,10 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { AbstractControl } from '@angular/forms';
 
 const VALIDATORS_MESSAGES:any = {
-  required: 'Should not be empty',
-  email: 'Email is not valid'
+  required:'Should not be empty',
+  email:'Email is not valid',
+  minlength: 'Field is too short',
+  notMatch: 'Password and Confirm does not match'
 }
 
 @Component({
@@ -29,8 +31,7 @@ export class InputValidationComponent implements OnInit,OnChanges {
   ngOnInit(): void {
     this.control.statusChanges.subscribe(() => {
       this.checkValidation();
-    })
-
+    });
     this.control.valueChanges.subscribe(() => {
       this.checkValidation();
     })
@@ -38,13 +39,14 @@ export class InputValidationComponent implements OnInit,OnChanges {
 
   checkValidation(){
     const errors = this.control.errors;
-    if (!errors){
+    if(!errors){
       this.errorMessages = [];
       return;
     }
 
     const errorKeys = Object.keys(errors);
     this.errorMessages = errorKeys.map(key => VALIDATORS_MESSAGES[key]);
+
   }
 
 }
