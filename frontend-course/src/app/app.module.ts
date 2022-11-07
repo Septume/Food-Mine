@@ -25,6 +25,8 @@ import { TextInputComponent } from './components/partials/text-input/text-input.
 import { TitleComponent } from './components/partials/title/title.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
+import { OrderItemsListComponent } from './components/partials/order-items-list/order-items-list.component';
+import { MapComponent } from './components/partials/map/map.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { CheckoutPageComponent } from './components/pages/checkout-page/checkout
     DefaultButtonComponent,
     RegisterPageComponent,
     LoadingComponent,
-    CheckoutPageComponent
+    CheckoutPageComponent,
+    OrderItemsListComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

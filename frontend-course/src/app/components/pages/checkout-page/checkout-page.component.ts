@@ -33,12 +33,13 @@ export class CheckoutPageComponent implements OnInit {
     this.checkoutForm = this._formBuidler.group({
       name:[name, Validators.required],
       address:[address, Validators.required]
-    })
+    });
   }
 
   get fc(){
     return this.checkoutForm.controls;
   }
+
 
   createOrder(){
     if(this.checkoutForm.invalid){

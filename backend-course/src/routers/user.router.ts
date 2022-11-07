@@ -64,7 +64,7 @@ router.post("/login", asyncHandler(
   const generateTokenResponse = (user:any) => {
     console.log("-------------------------",user);
    const token = jwt.sign({
-    email:user.email, isAdmin:user.isAdmin
+    id: user.id, email:user.email, isAdmin:user.isAdmin
    }, "SomeRandomText", {
     expiresIn:"30d"
    });
@@ -73,8 +73,8 @@ router.post("/login", asyncHandler(
     id: user.id,
     email: user.email,
     name: user.name,
-    address: user.name,
-    asAdmin:user.isAdmin,
+    address: user.address,
+    isAdmin:user.isAdmin,
     token: token
    };
   }
