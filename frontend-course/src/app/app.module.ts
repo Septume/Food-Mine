@@ -20,6 +20,7 @@ import { MapComponent } from './components/partials/map/map.component';
 import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { OrderItemsListComponent } from './components/partials/order-items-list/order-items-list.component';
+import { PaymentComponent } from './components/pages/payment/payment.component';
 import { RatingModule } from 'ng-starrating';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
@@ -49,7 +50,8 @@ import { ToastrModule } from 'ngx-toastr';
     LoadingComponent,
     CheckoutPageComponent,
     OrderItemsListComponent,
-    MapComponent
+    MapComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
