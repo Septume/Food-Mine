@@ -3,11 +3,11 @@
                 resetLinkText="Back To HomePage">
 </app-not-found>
 <div *ngIf="food" class="container">
-  <img [src]="food.imageUrl" alt="food.name"/>
+  <img [src]="food.imageUrl" alt="food.nom"/>
 
   <div class="details">
     <div class="header">
-      <span class="name">
+      <span class="nom">
         {{food.nom}}
       </span>
       <span class="favorite {{food.favori? '': 'not'}}">❤</span>

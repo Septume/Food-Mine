@@ -1,7 +1,7 @@
 export class User{
   id!:string;
   email!:string;
-  name!:string;
+  nom!:string;
   address!:string;
   token!:string;
   isAdmin!:boolean;

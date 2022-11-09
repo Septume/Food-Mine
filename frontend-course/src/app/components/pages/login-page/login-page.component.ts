@@ -27,6 +27,9 @@ export class LoginPageComponent implements OnInit {
     //queryParams => fragment en plusieur routes
     //snapshot => Observable de la route defini
     this.returnUrl = this._activatedRoute.snapshot.queryParams.returnUrl;
+
+    console.log(this.fc);
+
   }
 
     get fc(){

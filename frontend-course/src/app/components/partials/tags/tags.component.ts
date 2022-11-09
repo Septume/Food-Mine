@@ -20,6 +20,8 @@ export class TagsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("tags: ", this.tags);
+
   }
 
 }

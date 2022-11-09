@@ -33,9 +33,9 @@ export class CheckoutPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let {name, address} = this._userService.currentUser;
+    let {nom, address} = this._userService.currentUser;
     this.checkoutForm = this._formBuidler.group({
-      name:[name, Validators.required],
+      nom:[nom, Validators.required],
       address:[address, Validators.required]
     });
   }
@@ -56,7 +56,7 @@ export class CheckoutPageComponent implements OnInit {
       return;
     }
 
-    this.order.name = this.fc.name.value;
+    this.order.nom = this.fc.nom.value;
     this.order.address = this.fc.address.value;
 
     this. _orderService.create(this.order).subscribe({

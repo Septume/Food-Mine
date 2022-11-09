@@ -1,4 +1,3 @@
-import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from './auth/guards/auth.guard';
@@ -8,8 +7,8 @@ import { FoodPageComponent } from './components/pages/food-page/food-page.compon
 import { HomeComponent } from './components/pages/home/home.component';
 import { LoadingComponent } from './components/partials/loading/loading.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { NgModule } from '@angular/core';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
-import { Tag } from './shared/models/Tag';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},

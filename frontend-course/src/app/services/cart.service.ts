@@ -18,7 +18,7 @@ export class CartService {
   addToCart(food: Food): void {
     let cartItem = this.cart.items
     // find => renvois la première valeur de l'élément trouver
-    .find(item => item._food.id === food.id);
+    .find(item => item.food.id === food.id);
     if(cartItem)
     return;
 
@@ -28,18 +28,18 @@ export class CartService {
 
   removeFromCart(foodId: string): void{
     this.cart.items = this.cart.items
-      .filter(item => item._food.id != foodId);
+      .filter(item => item.food.id != foodId);
     this.setCartToLocalStorage();
   }
 
   changeQuantity(foodId:string, quantity:number){
     let cartItem = this.cart.items
     // find => renvois la première valeur de l'élément trouver
-    .find(item => item._food.id === foodId)
+    .find(item => item.food.id === foodId)
     if(!cartItem) return;
 
     cartItem.quantity = quantity;
-    cartItem.price = quantity * cartItem._food.prix;
+    cartItem. prix= quantity * cartItem.food.prix;
     this.setCartToLocalStorage();
   }
 
@@ -59,7 +59,7 @@ export class CartService {
   private setCartToLocalStorage(): void{
     this.cart.totalPrice = this.cart.items
     // reduce() => traite mes valeurs de gauche à droite
-    .reduce((prevSum, currentItem) => prevSum + currentItem.price, 0);
+    .reduce((prevSum, currentItem) => prevSum + currentItem.prix, 0);
     this.cart.totalCount = this.cart.items
     // reduce() => traite mes valeurs de gauche à droite
     .reduce((prevSum, currentItem) => prevSum + currentItem.quantity, 0)

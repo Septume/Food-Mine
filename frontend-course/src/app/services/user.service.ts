@@ -33,7 +33,7 @@ constructor(private _http:HttpClient, private _toastrService: ToastrService) {
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this._toastrService.success(
-            `Welcome to Food Mine ${user.name}!`,
+            `Welcome to Food Mine ${user.nom}!`,
             'Login Successful'
           )
         },
@@ -51,7 +51,7 @@ constructor(private _http:HttpClient, private _toastrService: ToastrService) {
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this._toastrService.success(
-            `Welcome to Food Mine ${user.name}!`,
+            `Welcome to Food Mine ${user.nom}!`,
             'Register Successful'
           )
         },

@@ -10,7 +10,7 @@
     <a routerLink="/food/{{food.id}}">
       <img [src]="food.imageUrl" [alt]="food.nom">
       <div class="content">
-        <div class="name">
+        <div class="nom">
           {{food.nom}}
         </div>
 
@@ -41,7 +41,7 @@
           </div>
         </div>
 
-        <div class="prix">
+        <div class="price">
           <span>
             {{food.prix | currency}}
           </span>

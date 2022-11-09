@@ -5,7 +5,7 @@ export class Order{
   id!:number;
   items!: CartItem[];
   totalPrice!:number;
-  name!: string;
+  nom!: string;
   address!: string;
   addressLatLng?:LatLng;
   paymentId!: string;
