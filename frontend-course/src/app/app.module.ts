@@ -30,6 +30,7 @@ import { TextInputComponent } from './components/partials/text-input/text-input.
 import { TitleComponent } from './components/partials/title/title.component';
 import { ToastrModule } from 'ngx-toastr';
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
+import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { PaypalButtonComponent } from './components/partials/paypal-button/paypa
     MapComponent,
     PaymentComponent,
     PaypalButtonComponent,
+    OrderTrackPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { LoadingComponent } from './components/partials/loading/loading.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { NgModule } from '@angular/core';
+import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { PaymentComponent } from './components/pages/payment/payment.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'loading', component: LoadingComponent},
   {path: 'checkout', component: CheckoutPageComponent, canActivate:[AuthGuard]},
   {path: 'payment', component: PaymentComponent, canActivate:[AuthGuard]},
+  {path: 'track/:orderId', component: OrderTrackPageComponent, canActivate:[AuthGuard]},
 ];
 
 @NgModule({
