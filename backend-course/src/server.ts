@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import express from "express";
 import foodRouter from './routers/food.router';
 import orderRouter from './routers/order.router';
+import path from 'path';
 import userRouter from './routers/user.router';
 dotenv.config();
 dbConnect();
@@ -42,7 +43,12 @@ app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 
 
-const port = 5000;
+app.use(express.static('public'));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname,'public', 'index.html'))
+})
+
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log("Le server du site est sur http://localhost:" + port);
 })
