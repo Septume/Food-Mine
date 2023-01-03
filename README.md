@@ -7,6 +7,6 @@ Projet personnel sur la création d'une application de commerce afin de découvr
     - Serveur, Routes et CRUD
 - Mise en place du Frontend sur Angular
     - Gestion de liste dynamique, avec tri par tips et bar de recherche
-    - Register/Login, JWT, Bcrypt
+    - Register/Login, JsonWebToken, Bcrypt
     - Systeme de Payment par Paypal
     - Localisation géographique de l'IP sur une map
